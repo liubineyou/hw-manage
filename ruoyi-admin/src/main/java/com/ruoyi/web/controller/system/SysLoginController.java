@@ -51,7 +51,6 @@ public class SysLoginController
             loginBody.setPassword(decrypt.trim());
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(e.getMessage());
         }
         // 生成令牌
         String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(),
