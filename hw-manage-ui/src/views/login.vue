@@ -3,7 +3,7 @@
     <div class="main">
       <div class="title">
         <div></div>
-        <p>山东省济南市公安局天桥区分局平台(若依管理系统)</p>
+        <p>山东省XXX天桥区分局平台(若依管理系统)</p>
       </div>
       <div class="main-content">
         <div class="login-left-image">
