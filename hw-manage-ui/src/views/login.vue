@@ -3,7 +3,7 @@
     <div class="main">
       <div class="title">
         <div></div>
-        <p>山东省XXX天桥区分局平台(若依管理系统)</p>
+        <p>{{customerName}}(若依管理系统)</p>
       </div>
       <div class="main-content">
         <div class="login-left-image">
@@ -11,7 +11,8 @@
         </div>
         <div class="login-right">
           <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
-            <p>用户登陆</p>
+            <p class="login-title">用户登陆</p>
+            <el-divider></el-divider>
             <el-form-item prop="username">
               <el-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号">
                 <svg-icon slot="prefix" icon-class="user" class="el-input__icon input-icon" />
@@ -48,14 +49,11 @@
 
       </div>
 
-
-
     </div>
-
 
     <!--  底部  -->
     <div class="el-login-footer">
-      <span>版权所有：天津市xxxx分局</span>
+      <span>版权所有：{{customerName}}</span>
       <span>建议浏览器：IE11及以上、360、谷歌、Firefox v22</span>
       <span>Copyright © 2018-2022 ruoyi.vip All Rights Reserved.</span>
     </div>
@@ -82,7 +80,7 @@
           password: "admin123",
           rememberMe: false,
           code: "",
-          uuid: ""
+          uuid: "",
         },
         loginRules: {
           username: [{
@@ -106,7 +104,8 @@
         captchaEnabled: true,
         // 注册开关
         register: false,
-        redirect: undefined
+        redirect: undefined,
+        customerName: "山东省XXX天桥区分局平台"
       };
     },
     watch: {
@@ -185,25 +184,27 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    // background-image: url("../assets/images/login-background.jpg");
-    // background-size: cover;
     background-color: #0064c8;
-    min-width: 900px;
+    min-width: 1200px;
+    min-height: 700px;
 
     .title {
       width: 100%;
-      p{
+
+      p {
         color: #fff;
         font-size: 40px;
         font-weight: 600;
         letter-spacing: 5px;
         padding-left: 10px;
       }
+
       display: flex;
       flex:1;
       text-align: center;
       align-items: center;
-      div{
+
+      div {
         background-image: url('../assets/images/jinghui.png');
         background-size: 100% 100%;
         width: 60px;
@@ -212,18 +213,21 @@
     }
 
 
-    .main {}
+    .main {
+      height: 600px;
+    }
 
     .main-content {
       display: flex;
       flex-direction: row;
-      height: 365px;
+      height: 380px;
     }
 
     .login-left-image {
       padding: 0;
-      height: 363px;
+      width: 500px;
       background: url("../assets/images/login_left.png") no-repeat center;
+      // background-size: cover;
       background-size: 100% 100%;
       display: flex;
       flex: 1;
@@ -233,20 +237,19 @@
 
 
 
-
-
   .login-form {
     border-radius: 0 6px 6px 0;
     background: #ffffff;
     width: 400px;
-    height: 363px;
-    padding: 25px 25px 5px 25px;
+    padding: 15px 25px 5px 25px;
+    height: 380px;
 
     p {
       color: #251E5F;
       font-size: 20px;
       font-weight: 700;
       text-align: center;
+      margin: 0;
     }
 
     .el-input {
@@ -287,17 +290,17 @@
     width: 100%;
     text-align: center;
     color: #fff;
-    font-family: Arial;
+    // font-family: Arial;
     font-size: 12px;
-    // letter-spacing: 1px;
+    letter-spacing: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
-    spa {
-
-      margin: 3px;
+    span {
+      // margin: 2px;
+      padding: 2px;
     }
   }
 
